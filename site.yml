@@ -1,0 +1,5 @@
+# Master playbook
+
+- hosts: laptop
+  roles:
+    - development

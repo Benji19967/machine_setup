@@ -1,0 +1,26 @@
+- name: Install apps with homebrew
+  homebrew: name={{ item }} state=present
+  with_items:
+    - wget
+    - tmux
+    - htop
+    - rg
+    - git
+    - python3
+    - zsh 
+    - git-delta
+    - hyperfine
+    - exa
+    - dust
+    - fd
+
+- name: Install cask packages 
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - google-chrome
+
+- name: Setup dotfiles
+  git:
+    repo: git@github.com:Benji19967/dotfiles.git
+    dest: "'{{ lookup('ansible.builtin.env', 'HOME') }}'/apps/home/labrecqb/dotfiles"
+    update: no
