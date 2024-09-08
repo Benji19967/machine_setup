@@ -11,6 +11,11 @@
     - dust
     - fd
 
+- name: Install apps with homebrew (cask)
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - julia 
+
 - name: Setup dotfiles
   git:
     repo: git@github.com:Benji19967/dotfiles.git
