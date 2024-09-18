@@ -10,6 +10,9 @@
     - exa
     - dust
     - fd
+    # Font for alacritty to show icons
+    # https://www.josean.com/posts/how-to-setup-alacritty-terminal
+    - font-meslo-lg-nerd-font
 
 - name: Install apps with homebrew (cask)
   homebrew_cask: name={{ item }} state=present
