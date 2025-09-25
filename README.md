@@ -5,9 +5,10 @@ The goal is to set up a new machine (e.g. laptop) with as minimal manual work as
 
 ## 1.) SSH and GitHub
 
-Create an ssh key and add it to GitHub (see in notes repo: ssh.md)
+- Create an ssh key and add it to GitHub (see in notes repo: ssh.md)
+- set git name and e-mail
 
-## 2.)
+## 2.) Clone this repo
 
 Clone this repo in a dedicated coding workspace
 
