@@ -1,0 +1,5 @@
+# Master playbook
+
+- hosts: localhost
+  tasks:
+    - include: tasks/dotfiles.yml

@@ -13,15 +13,19 @@ Clone this repo in a dedicated coding workspace
 
 ## 3.) Ansible
 
-## Install
+### 3.1) Installing
 
 `./ansible-install`
+
+### 3.2) Running the playbook
+
+`ansible-playbook local.yml`
 
 ## Best practices
 
 https://docs.ansible.com/ansible/2.8/user_guide/playbooks_best_practices.html
 
-## Running a playbook
+## Running a playbook (MacOS)
 
 ```bash
 HOMEBREW_NO_AUTO_UPDATE=1 ansible-playbook -i local site.yml -c local
