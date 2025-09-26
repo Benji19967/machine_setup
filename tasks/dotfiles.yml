@@ -16,3 +16,9 @@
     - install
     - dotfiles
     - stow
+- name: Stow dotfiles
+  shell: cd $WORKSPACE/dotfiles && ./install
+  tags:
+    - install
+    - dotfiles
+    - stow
