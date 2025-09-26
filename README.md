@@ -2,7 +2,6 @@
 
 The goal is to set up a new machine (e.g. laptop) with as minimal manual work as possible.
 
-
 ## 1.) SSH and GitHub
 
 - Create an ssh key and add it to GitHub (see in notes repo: ssh.md)
@@ -13,6 +12,10 @@ The goal is to set up a new machine (e.g. laptop) with as minimal manual work as
 Clone this repo in a dedicated coding workspace
 
 ## 3.) Ansible
+
+## Install
+
+`./ansible-install`
 
 ## Best practices
 
