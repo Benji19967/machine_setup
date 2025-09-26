@@ -13,6 +13,12 @@ Clone this repo in a dedicated coding workspace
 
 ## 3.) Ansible
 
+Define a workspace:
+
+```bash
+export $WORKSPACE=${HOME}/apps/home/labrecqb
+```
+
 ### 3.1) Installing
 
 `./ansible-install`

@@ -3,3 +3,4 @@
 - hosts: localhost
   tasks:
     - include: tasks/dotfiles.yml
+    - include: tasks/fzf.yml
