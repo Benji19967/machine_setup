@@ -1,0 +1,8 @@
+- name: Install Lua
+  become: true
+  apt:
+    name: ["lua5.2", "liblua5.2-dev"]
+  tags:
+    - install
+    - neovim
+    - lua

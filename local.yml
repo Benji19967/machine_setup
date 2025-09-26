@@ -4,4 +4,6 @@
   tasks:
     - include: tasks/dotfiles.yml
     - include: tasks/fzf.yml
-    - include: tasks/neovim-setup.yml
+    # - include: tasks/neovim-setup.yml
+    - include: tasks/lua-setup.yml
+    - include: tasks/node-setup.yml
