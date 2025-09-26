@@ -1,0 +1,10 @@
+- name: Install Packages
+  become: true
+  apt:
+    name: [
+      "net-tools",
+      "bison", # required for tmux on Ubuntu 
+          ]
+  tags:
+    - install
+    - core

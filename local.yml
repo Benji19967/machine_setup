@@ -4,6 +4,8 @@
   tasks:
     - include: tasks/dotfiles.yml
     - include: tasks/fzf.yml
+    - include: tasks/core-setup.yml
     # - include: tasks/neovim-setup.yml
     - include: tasks/lua-setup.yml
     - include: tasks/node-setup.yml
+    - include: tasks/tmux-setup.yml

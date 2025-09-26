@@ -1,0 +1,23 @@
+- name: Clone Tmux
+  ansible.builtin.git:
+    repo: 'https://github.com/tmux/tmux.git'
+    dest: "{{ lookup('env', 'HOME') }}/tmux"
+    version: 3.5a
+  tags:
+    - install
+    - tmux
+- name: Build Tmux
+  shell: "cd {{ lookup('env', 'HOME') }}/tmux && sh autogen.sh"
+  tags:
+    - install
+    - tmux
+- name: Build Tmux 2
+  shell: "cd {{ lookup('env', 'HOME') }}/tmux && ./configure"
+  tags:
+    - install
+    - tmux
+- name: Build Tmux 3
+  shell: "cd {{ lookup('env', 'HOME') }}/tmux && make"
+  tags:
+    - install
+    - tmux
