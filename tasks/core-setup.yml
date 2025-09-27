@@ -5,6 +5,7 @@
       "net-tools",
       "bison", # required for tmux on Ubuntu 
       "gpg", # required for eza
+      "ripgrep",
           ]
   tags:
     - install

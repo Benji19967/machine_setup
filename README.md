@@ -27,6 +27,10 @@ export $WORKSPACE=${HOME}/apps/home/labrecqb
 
 `ansible-playbook local.yml`
 
+with a tag:
+
+`ansible-playbook local.yml` --tags "<tag_name>"
+
 ### 3.3) Neovim
 
 Enter neovim
