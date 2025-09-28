@@ -1,0 +1,10 @@
+- name: Cloning build_tools
+  ansible.builtin.git:
+    repo: 'git@github.com:Benji19967/build_tools.git'
+    dest: "{{ lookup('env', 'WORKSPACE') }}/build_tools"
+    update: no
+    accept_hostkey: yes
+    version: master
+  tags:
+    - install
+    - python

@@ -25,11 +25,11 @@ export $WORKSPACE=${HOME}/apps/home/labrecqb
 
 ### 3.2) Running the playbook
 
-`sudo ansible-playbook local.yml`
+`ansible-playbook local.yml`
 
 with a tag:
 
-`sudo ansible-playbook local.yml` --tags "<tag_name>"
+`ansible-playbook local.yml` --tags "<tag_name>"
 
 ## 4.) Neovim
 
