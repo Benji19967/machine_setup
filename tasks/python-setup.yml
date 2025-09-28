@@ -1,3 +1,52 @@
+# Uncomment when running for first time (errors out if pyenv already installed)
+# - name: Install pyenv
+#   shell: "curl -fsSL https://pyenv.run | bash"
+#   tags:
+#     - install
+#     - python
+- name: Install Python build dependencies
+  become: true
+  apt:
+    name: [
+      "make", "build-essential", "libssl-dev", "zlib1g-dev",
+      "libbz2-dev", "libreadline-dev", "libsqlite3-dev", "curl", "git",
+      "libncursesw5-dev", "xz-utils", "tk-dev", "libxml2-dev", "libxmlsec1-dev", "libffi-dev", "liblzma-dev",
+    ]
+  tags:
+    - install
+    - python
+- name: Install a specific Python version
+  shell: |
+    pyenv install 3.12
+  tags:
+    - install
+    - python
+- name: Set global python version
+  shell: |
+    pyenv global 3.12
+  tags:
+    - install
+    - python
+- name: Install pip and venv
+  become: true
+  apt:
+    name: [
+      "python3-pip", # used to install pipx
+      "python3-venv", # used by pipx
+          ]
+  tags:
+    - install
+    - python
+- name: Pip install pipx
+  shell: "pip install pipx"
+  tags:
+  - install
+  - python
+- name: Pipx install poetry
+  shell: "pipx install poetry"
+  tags:
+  - install
+  - python
 - name: Cloning build_tools
   ansible.builtin.git:
     repo: 'git@github.com:Benji19967/build_tools.git'

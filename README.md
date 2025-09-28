@@ -38,6 +38,9 @@ Enter neovim
 
 Fix null-ls: https://github.com/Benji19967/notes/blob/master/vim.md#null-ls
 
+## 5.) Python
+
+see PYTHON.md
 
 ## Best practices
 

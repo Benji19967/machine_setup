@@ -9,3 +9,6 @@
     - fzf
 - name: Install fzf
   shell: "~/.fzf/install"
+  tags:
+    - install
+    - fzf
