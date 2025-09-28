@@ -31,10 +31,13 @@ with a tag:
 
 `sudo ansible-playbook local.yml` --tags "<tag_name>"
 
-### 3.3) Neovim
+## 4.) Neovim
 
 Enter neovim
 `:PackerInstall` and `:PackerSync`
+
+Fix null-ls: https://github.com/Benji19967/notes/blob/master/vim.md#null-ls
+
 
 ## Best practices
 
