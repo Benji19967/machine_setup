@@ -1,0 +1,5 @@
+- name: Install Juliaup and Julia
+  shell: "curl -fsSL https://install.julialang.org -y | sh"
+  tags:
+  - install
+  - julia
