@@ -7,12 +7,21 @@
     - rg
     - git-delta
     - hyperfine
-    - exa
+    - eza
     - dust
     - fd
     # Font for alacritty to show icons
     # https://www.josean.com/posts/how-to-setup-alacritty-terminal
     - font-meslo-lg-nerd-font
+    # For decker (slides)
+    - rsync 
+    - graphviz 
+    - gnuplot 
+    - pdf2svg 
+    - yarn 
+    - coreutils 
+    - pkg-config 
+
 
 - name: Install apps with homebrew (cask)
   homebrew_cask: name={{ item }} state=present

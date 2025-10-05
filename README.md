@@ -23,13 +23,20 @@ export $WORKSPACE=${HOME}/apps/home/labrecqb
 
 `./ansible-install-<os>`
 
+
 ### 3.2) Running the playbook
+
+ubuntu:
 
 `ansible-playbook ubuntu.yml`
 
+macos:
+
+`HOMEBREW_NO_AUTO_UPDATE=1 ansible-playbook macos.yml`
+
 with a tag:
 
-`ansible-playbook ubuntu.yml` --tags "<tag_name>"
+`ansible-playbook ubuntu.yml --tags "<tag_name>"`
 
 ## 4.) Neovim
 
@@ -45,12 +52,3 @@ see PYTHON.md
 ## Best practices
 
 https://docs.ansible.com/ansible/2.8/user_guide/playbooks_best_practices.html
-
-## Running a playbook (MacOS)
-
-```bash
-HOMEBREW_NO_AUTO_UPDATE=1 ansible-playbook -i local site.yml -c local
-```
-
-`-c local` tells Ansible not to try to connect through ssh but rather run the playbook 
-(site.yml) locally.
