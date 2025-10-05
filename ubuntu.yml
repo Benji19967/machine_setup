@@ -1,0 +1,13 @@
+# Master playbook
+
+- hosts: localhost
+  tasks:
+    - include: tasks_ubuntu/dotfiles.yml
+    - include: tasks_ubuntu/fzf.yml
+    - include: tasks_ubuntu/core-setup.yml
+    # - include: tasks_ubuntu/neovim-setup.yml
+    - include: tasks_ubuntu/lua-setup.yml
+    - include: tasks_ubuntu/node-setup.yml
+    - include: tasks_ubuntu/tmux-setup.yml
+    - include: tasks_ubuntu/python-setup.yml
+    - include: tasks_ubuntu/julia-setup.yml

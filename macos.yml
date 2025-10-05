@@ -1,0 +1,5 @@
+# Master playbook
+
+- hosts: localhost
+  tasks:
+    - include: tasks_macos/core-setup.yml

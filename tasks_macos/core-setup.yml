@@ -18,9 +18,3 @@
   homebrew_cask: name={{ item }} state=present
   with_items:
     - julia 
-
-- name: Setup dotfiles
-  git:
-    repo: git@github.com:Benji19967/dotfiles.git
-    dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/apps/home/labrecqb/dotfiles"
-    update: no

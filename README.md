@@ -21,15 +21,15 @@ export $WORKSPACE=${HOME}/apps/home/labrecqb
 
 ### 3.1) Installing
 
-`./ansible-install`
+`./ansible-install-<os>`
 
 ### 3.2) Running the playbook
 
-`ansible-playbook local.yml`
+`ansible-playbook ubuntu.yml`
 
 with a tag:
 
-`ansible-playbook local.yml` --tags "<tag_name>"
+`ansible-playbook ubuntu.yml` --tags "<tag_name>"
 
 ## 4.) Neovim
 
