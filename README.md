@@ -45,6 +45,10 @@ Enter neovim
 
 Fix null-ls: https://github.com/Benji19967/notes/blob/master/vim.md#null-ls
 
+### 4.1) Mason
+
+Install Mason lsp tools (ruff, pyright, clangd)
+
 ## 5.) Python
 
 see PYTHON.md
