@@ -31,3 +31,8 @@ Example: poetry
 ## Poetry
 
 Using poetry to manage virtual envs of applications / libraries / projects I work on.
+
+
+## In Neovim
+
+- Autoformat requires ruff to be installed in Mason

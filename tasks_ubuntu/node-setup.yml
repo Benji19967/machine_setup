@@ -1,8 +1,12 @@
-# Required to install pyright
-- name: Install nodejs and npm
-  become: true
-  apt:
-    name: ["nodejs", "npm"]
+# Required to install pyright (node --version should be >v18)
+- name: Install Node.js using 'n'
+  shell: |
+    curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o /usr/local/bin/n
+    chmod +x /usr/local/bin/n
+    n lts
+  args:
+    executable: /bin/bash
+  become: true  # you need sudo to install to /usr/local
   tags:
     - install
     - nodejs

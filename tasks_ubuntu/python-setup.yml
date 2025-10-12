@@ -15,18 +15,18 @@
   tags:
     - install
     - python
-- name: Install a specific Python version
-  shell: |
-    pyenv install 3.12
-  tags:
-    - install
-    - python
-- name: Set global python version
-  shell: |
-    pyenv global 3.12
-  tags:
-    - install
-    - python
+# - name: Install a specific Python version
+#   shell: |
+#     pyenv install 3.12
+#   tags:
+#     - install
+#     - python
+# - name: Set global python version
+#   shell: |
+#     pyenv global 3.12
+#   tags:
+#     - install
+#     - python
 - name: Install pip and venv
   become: true
   apt:
