@@ -6,18 +6,18 @@
     - install
     - dotfiles
     - stow
-# - name: Cloning dotfiles
-#   ansible.builtin.git:
-#     repo: 'git@github.com:Benji19967/dotfiles.git'
-#     dest: "{{ lookup('env', 'WORKSPACE') }}/dotfiles"
-#     recursive: yes
-#     update: yes
-#     accept_hostkey: yes
-#     version: master
-#   tags:
-#     - install
-#     - dotfiles
-#     - stow
+- name: Cloning dotfiles
+  ansible.builtin.git:
+    repo: 'git@github.com:Benji19967/dotfiles.git'
+    dest: "{{ lookup('env', 'WORKSPACE') }}/dotfiles"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    version: master
+  tags:
+    - install
+    - dotfiles
+    - stow
 - name: Stow dotfiles
   shell: cd $WORKSPACE/dotfiles && ./install-macos
   tags:
