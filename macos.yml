@@ -3,4 +3,8 @@
 - hosts: localhost
   tasks:
     - include_tasks: tasks_macos/core-setup.yml
+      tags: 
+        - core
     - include_tasks: tasks_macos/dotfiles.yml
+      tags: 
+        - dotfiles

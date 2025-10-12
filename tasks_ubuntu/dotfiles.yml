@@ -17,7 +17,7 @@
     - dotfiles
     - stow
 - name: Stow dotfiles
-  shell: cd $WORKSPACE/dotfiles && ./install
+  shell: cd $WORKSPACE/dotfiles && ./install-ubuntu
   tags:
     - install
     - dotfiles

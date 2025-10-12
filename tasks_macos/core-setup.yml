@@ -21,6 +21,7 @@
     - yarn 
     - coreutils 
     - pkg-config 
+    - nnn
 
 
 - name: Install apps with homebrew (cask)
