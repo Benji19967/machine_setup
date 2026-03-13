@@ -8,3 +8,9 @@
     - include_tasks: tasks_macos/dotfiles.yml
       tags: 
         - dotfiles
+    - include_tasks: tasks_macos/alacritty.yml
+      tags: 
+        - alacritty
+    - include_tasks: tasks_macos/python-setup.yml
+      tags: 
+        - python

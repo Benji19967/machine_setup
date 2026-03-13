@@ -22,9 +22,24 @@
     - coreutils 
     - pkg-config 
     - nnn
+    - node
+    # image rendering in neovim telescope
+    - chafa
+    # image rendering in neovim using snacks.nvim
+    - imagemagick 
+    # required by imagemagick
+    - ghostscript
+    # Format lua code
+    - stylua
+    # Search and replace for code
+    - ast-grep
+    # Java build tool
+    - maven
 
 
 - name: Install apps with homebrew (cask)
   homebrew_cask: name={{ item }} state=present
   with_items:
     - julia 
+    - ghostty
+    - nikitabobko/tap/aerospace
