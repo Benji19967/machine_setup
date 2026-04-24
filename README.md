@@ -16,15 +16,30 @@ Clone this repo in a dedicated coding workspace
 Define a workspace:
 
 ```bash
-export $WORKSPACE=${HOME}/apps/home/labrecqb
+export WORKSPACE=${HOME}/apps/home/labrecqb
 ```
 
 ### 3.1) Installing
 
 `./ansible-install-<os>`
 
+### 3.2) Sudo without PW
 
-### 3.2) Running the playbook
+This will forgo asking for a PW for the tasks that run as sudo (`become: true`).
+
+```
+sudo visudo
+```
+
+add 
+
+```
+<username> ALL=(ALL) NOPASSWD:ALL
+```
+
+to bottom of file (<username> is output of `whoami`)
+
+### 3.3) Running the playbook
 
 ubuntu:
 
@@ -39,9 +54,6 @@ with a tag:
 `ansible-playbook ubuntu.yml --tags "<tag_name>"`
 
 ## 4.) Neovim
-
-Enter neovim
-`:PackerInstall` and `:PackerSync`
 
 Fix null-ls: https://github.com/Benji19967/notes/blob/master/vim.md#null-ls
 

@@ -4,6 +4,7 @@
     - install
     - dotfiles
     - stow
+  become: true
 - name: Cloning dotfiles
   ansible.builtin.git:
     repo: 'git@github.com:Benji19967/dotfiles.git'
