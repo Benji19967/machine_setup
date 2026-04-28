@@ -9,5 +9,5 @@
   become: true  # you need sudo to install to /usr/local
   tags:
     - install
-    - nodejs
+    - node
 

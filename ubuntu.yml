@@ -26,6 +26,9 @@
     - include_tasks: tasks_ubuntu/python-setup.yml
       tags:
         - python
+    - include_tasks: tasks_ubuntu/ros2-setup.yml
+      tags:
+        - ros2
           #- include_tasks: tasks_ubuntu/julia-setup.yml
           #tags:
           #- julia
