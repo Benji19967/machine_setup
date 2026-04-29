@@ -14,6 +14,6 @@
     - include_tasks: tasks_macos/python-setup.yml
       tags: 
         - python
-    - include_tasks: tasks_macos/ros2-setup.yml
+    - include_tasks: tasks_macos/robotics-setup.yml
       tags: 
-        - ros2
+        - robotics
