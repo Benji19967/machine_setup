@@ -9,6 +9,10 @@
     - hyperfine
     - eza
     - dust
+    # To unzip / unrar
+    # - sevenzip
+    # To unzip / unrar
+    - unar
     - fd
     # Font for alacritty to show icons
     # https://www.josean.com/posts/how-to-setup-alacritty-terminal
@@ -35,6 +39,8 @@
     - ast-grep
     # Java build tool
     - maven
+    # For network discovery
+    - nmap
 
 
 - name: Install apps with homebrew (cask)
