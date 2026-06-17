@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+## Enable the EPEL repository (Red Hat's equivalent to adding a PPA)
+sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E '%{rhel}').noarch.rpm
+
+## Update package lists
+sudo dnf check-update -y
+
+## Install curl, git, and ansible
+# Note: 'software-properties-common' is an apt-specific package and is not needed on RHEL
+sudo dnf install -y curl git ansible
