@@ -1,0 +1,7 @@
+# Master playbook
+
+- hosts: localhost
+  tasks:
+    - include_tasks: tasks_rhel/fzf.yml
+      tags:
+        - fzf
