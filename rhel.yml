@@ -11,6 +11,9 @@
     - include_tasks: tasks_rhel/dotfiles.yml
       tags:
         - dotfiles
+    - include_tasks: tasks_rhel/node-setup.yml
+      tags:
+        - node
     - include_tasks: tasks_rhel/neovim-setup.yml
       tags:
         - neovim
