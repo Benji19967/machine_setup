@@ -39,6 +39,16 @@
     - install
     - core
 
+
+- name: Install fd
+  become: true
+  shell: |
+    dnf copr enable tkbcopr/fd -y
+    dnf install fd -y
+  tags:
+    - install
+    - core
+
 - name: Install Eza
   become: true
   shell: |
