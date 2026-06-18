@@ -8,3 +8,9 @@
     - include_tasks: tasks_rhel/core-setup.yml
       tags:
         - core
+    - include_tasks: tasks_rhel/dotfiles.yml
+      tags:
+        - dotfiles
+    - include_tasks: tasks_rhel/neovim-setup.yml
+      tags:
+        - neovim

@@ -21,6 +21,7 @@
       - "make"
       - "cmake"
       - "clang"
+      - "git-delta"
     state: present
   tags:
     - install
