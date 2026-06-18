@@ -1,0 +1,41 @@
+- name: Clone Tmux into source directory
+  ansible.builtin.git:
+    repo: 'https://github.com/tmux/tmux.git'
+    dest: "{{ lookup('env', 'HOME') }}/src/tmux"
+    version: 3.5a
+  tags:
+    - install
+    - tmux
+
+- name: Generate build configuration (autogen.sh)
+  ansible.builtin.shell:
+    cmd: sh autogen.sh
+    chdir: "{{ lookup('env', 'HOME') }}/src/tmux"
+  tags:
+    - install
+    - tmux
+
+- name: Configure Tmux with local home prefix
+  ansible.builtin.shell:
+    cmd: "./configure --prefix={{ lookup('env', 'HOME') }}/.local"
+    chdir: "{{ lookup('env', 'HOME') }}/src/tmux"
+  tags:
+    - install
+    - tmux
+
+- name: Compile Tmux
+  ansible.builtin.shell:
+    cmd: make
+    chdir: "{{ lookup('env', 'HOME') }}/src/tmux"
+  tags:
+    - install
+    - tmux
+
+- name: Install Tmux binary and man pages locally
+  ansible.builtin.shell:
+    cmd: make install
+    chdir: "{{ lookup('env', 'HOME') }}/src/tmux"
+    creates: "{{ lookup('env', 'HOME') }}/.local/bin/tmux"
+  tags:
+    - install
+    - tmux

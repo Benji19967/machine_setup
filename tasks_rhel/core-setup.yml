@@ -8,6 +8,15 @@
     - install
     - core
 
+- name: Install Development Tools group
+  become: true
+  ansible.builtin.dnf:
+    name: "@Development Tools"
+    state: present
+  tags:
+    - install
+    - core
+
 - name: Install Core Packages
   become: true
   dnf:
@@ -22,6 +31,9 @@
       - "cmake"
       - "clang"
       - "git-delta"
+      - "libevent-devel"  # for tmux
+      - "ncurses-devel"   # for tmux
+      - "xclip"            # to copy into clipboard from neovim
     state: present
   tags:
     - install
