@@ -17,6 +17,9 @@
     - include_tasks: tasks_rhel/neovim-setup.yml
       tags:
         - neovim
+    - include_tasks: tasks_rhel/python-setup.yml
+      tags:
+        - python
     - include_tasks: tasks_rhel/tmux-setup.yml
       tags:
         - tmux

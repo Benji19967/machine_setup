@@ -1,0 +1,57 @@
+- name: Check if pyenv is already installed
+  ansible.builtin.stat:
+    path: "{{ ansible_env.HOME }}/.pyenv"
+  register: pyenv_dir
+  tags:
+    - install
+    - python
+
+- name: Install pyenv
+  shell: "curl -fsSL https://pyenv.run | bash"
+  when: not pyenv_dir.stat.exists
+  tags:
+    - install
+    - python
+
+- name: Install Python build dependencies for RHEL
+  become: true
+  ansible.builtin.dnf:
+    name:
+      - "@Development Tools"  # Replaces build-essential
+      - openssl-devel         # Replaces libssl-dev
+      - zlib-devel            # Replaces zlib1g-dev
+      - bzip2-devel           # Replaces libbz2-dev
+      - readline-devel        # Replaces libreadline-dev
+      - sqlite-devel          # Replaces libsqlite3-dev
+      - ncurses-devel         # Replaces libncursesw5-dev
+      - xz-devel              # Replaces xz-utils / liblzma-dev
+      - tk-devel              # Replaces tk-dev
+      - libxml2-devel         # Replaces libxml2-dev
+      - xmlsec1-devel         # Replaces libxmlsec1-dev
+      - libffi-devel          # Replaces libffi-dev
+      - curl
+      - git
+    state: present  
+  tags:
+    - install
+    - python
+
+- name: Install a specific Python version
+  shell: |
+    ${HOME}/.pyenv/bin/pyenv install 3.12
+  tags:
+    - install
+    - python
+
+- name: Set global python version
+  shell: |
+    ${HOME}/.pyenv/bin/pyenv global 3.12
+  tags:
+    - install
+    - python
+
+- name: Install uv
+  shell: "curl -LsSf https://astral.sh/uv/install.sh | sh"
+  tags:
+  - install
+  - python
