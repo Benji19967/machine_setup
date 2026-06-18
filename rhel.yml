@@ -5,3 +5,6 @@
     - include_tasks: tasks_rhel/fzf.yml
       tags:
         - fzf
+    - include_tasks: tasks_rhel/core-setup.yml
+      tags:
+        - core

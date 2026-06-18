@@ -1,0 +1,47 @@
+- name: Setup EPEL Repository # required on RHEL for community packages like ripgrep, htop, and eza
+  become: true
+  dnf:
+    name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
+    state: present
+    disable_gpg_check: true
+  tags:
+    - install
+    - core
+
+- name: Install Core Packages
+  become: true
+  dnf:
+    name:
+      - "wget"
+      - "net-tools"
+      - "bison"
+      - "gnupg2"      # RHEL equivalent to gpg
+      - "ripgrep"     # Provided by EPEL
+      - "htop"        # Provided by EPEL
+      - "make"
+      - "cmake"
+      - "clang"
+    state: present
+  tags:
+    - install
+    - core
+
+- name: Install Eza
+  become: true
+  shell: |
+    wget -c https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
+    sudo chmod +x eza
+    sudo chown root:root eza
+    sudo mv eza /usr/local/bin/eza
+  tags:
+    - install
+    - core
+
+- name: Ensure GitHub CLI is installed from the added repo
+  become: true
+  dnf:
+    name: gh
+    state: present
+  tags:
+    - install
+    - core
