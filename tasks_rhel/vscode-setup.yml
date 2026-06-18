@@ -1,0 +1,17 @@
+- name: Install VSCode -- install key and yum repositories
+  become: true
+  shell: |
+    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc &&
+    echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
+  tags:
+    - vscode
+
+- name: Install VS Code using native DNF module
+  become: true
+  ansible.builtin.dnf:
+    name: code
+    state: present
+    update_cache: true  # This cleanly handles 'dnf check-update' under the hood
+  tags:
+    - install
+    - vscode

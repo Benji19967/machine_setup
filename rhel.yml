@@ -23,3 +23,6 @@
     - include_tasks: tasks_rhel/tmux-setup.yml
       tags:
         - tmux
+    - include_tasks: tasks_rhel/vscode-setup.yml
+      tags:
+        - vscode
