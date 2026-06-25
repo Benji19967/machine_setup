@@ -36,19 +36,19 @@
     - install
     - python
 
-- name: Install a specific Python version
-  shell: |
-    ${HOME}/.pyenv/bin/pyenv install 3.12
-  tags:
-    - install
-    - python
-
-- name: Set global python version
-  shell: |
-    ${HOME}/.pyenv/bin/pyenv global 3.12
-  tags:
-    - install
-    - python
+# - name: Install a specific Python version
+#   shell: |
+#     ${HOME}/.pyenv/bin/pyenv install 3.12
+#   tags:
+#     - install
+#     - python
+#
+# - name: Set global python version
+#   shell: |
+#     ${HOME}/.pyenv/bin/pyenv global 3.12
+#   tags:
+#     - install
+#     - python
 
 - name: Install uv
   shell: "curl -LsSf https://astral.sh/uv/install.sh | sh"
