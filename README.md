@@ -19,6 +19,25 @@ Define a workspace:
 export WORKSPACE=${HOME}/apps/home/labrecqb
 ```
 
+Define an install dir (where binaries are installed and run from):
+
+```bash
+export INSTALL_DIR=...
+```
+
+Define config dir:
+
+```bash
+# static configs (e.g. nvim/init.lua)
+export XDG_CONFIG_HOME=<labrecqb>/.config
+# persisten data files (e.g. mason lsps)
+export XDG_DATA_HOME=<labrecqb>/.local/share
+# persistent state data (e.g. terminal history)
+export XDG_STATE_HOME=<labrecqb>/.local/state
+# non-essential cached data (e.g. compiler caches)
+export XDG_CACHE_HOME=<labrecqb>/.cache
+```
+
 ### 3.1) Installing
 
 `./ansible-install-<os>`
