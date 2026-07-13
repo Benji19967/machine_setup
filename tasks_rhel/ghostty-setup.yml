@@ -1,0 +1,46 @@
+# Setup snap: https://snapcraft.io/install/ghostty/rhel
+#
+- name: Install snapd
+  shell: |
+    sudo yum install snapd -y
+  args:
+    executable: /bin/bash
+  become: true
+  tags:
+    - install
+    - ghostty
+- name: Enable systemd that manages snap communication socket
+  shell: |
+    sudo systemctl enable --now snapd.socket
+  args:
+    executable: /bin/bash
+  become: true
+  tags:
+    - install
+    - ghostty
+- name: Enable classic snap support
+  shell: |
+    sudo ln -s /var/lib/snapd/snap /snap
+  args:
+    executable: /bin/bash
+  become: true
+  tags:
+    - install
+    - ghostty
+- name: Wait for snapd to be ready (seeding to finish)
+  ansible.builtin.command: snap wait system seed.loaded
+  changed_when: false
+  register: snap_ready
+  until: snap_ready.rc == 0
+  retries: 10
+  delay: 2
+# Installation under /snap/ghostty/..., bin at /snap/bin/ghostty
+- name: Install ghostty
+  shell: |
+    sudo snap install ghostty --classic
+  args:
+    executable: /bin/bash
+  become: true
+  tags:
+    - install
+    - ghostty

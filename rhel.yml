@@ -1,5 +1,4 @@
 # Master playbook
-
 - hosts: localhost
   tasks:
     - include_tasks: tasks_rhel/fzf.yml
@@ -20,6 +19,12 @@
     - include_tasks: tasks_rhel/neovide-setup.yml
       tags:
         - neovide
+    - include_tasks: tasks_rhel/ghostty-setup.yml
+      tags:
+        - ghostty
+    - include_tasks: tasks_rhel/nerdfont-setup.yml
+      tags:
+        - nerdfont
     - include_tasks: tasks_rhel/python-setup.yml
       tags:
         - python
