@@ -1,0 +1,32 @@
+- name: Install Required Packages
+  become: true
+  dnf:
+    name:
+      - "fontconfig-devel"
+      - "freetype-devel"
+      - "libstdc++-static"
+      - "libstdc++-devel"
+    state: present
+  tags:
+    - install
+    - neovide
+- name: Download Rust Installer
+  get_url:
+    url: https://sh.rustup.rs
+    dest: /tmp/sh.rustup.rs
+    mode: '0755'
+    force: 'yes'
+  tags:
+    - install
+    - neovide
+- name: Install Rust/Cargo
+  shell: /tmp/sh.rustup.rs -y
+  tags:
+    - install
+    - neovide
+- name: Fetch and Build
+  shell: |
+    ~/.cargo/bin/cargo install --git https://github.com/neovide/neovide
+  tags:
+    - install
+    - neovide
