@@ -41,6 +41,7 @@
     - maven
     # For network discovery
     - nmap
+    - nushell
 
 
 - name: Install apps with homebrew (cask)
