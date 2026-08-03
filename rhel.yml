@@ -10,6 +10,12 @@
     - include_tasks: tasks_rhel/dotfiles.yml
       tags:
         - dotfiles
+    - include_tasks: tasks_rhel/cargo-setup.yml
+      tags:
+        - cargo
+    - include_tasks: tasks_rhel/cargo-packages-setup.yml
+      tags:
+        - cargo-packages
     - include_tasks: tasks_rhel/node-setup.yml
       tags:
         - node
