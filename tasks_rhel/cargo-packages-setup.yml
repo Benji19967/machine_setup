@@ -1,0 +1,6 @@
+- name: Install tealdeer
+  shell: |
+    cargo install tealdeer
+  tags:
+    - install
+    - cargo-packages

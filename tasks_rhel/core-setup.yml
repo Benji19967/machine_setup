@@ -33,7 +33,8 @@
       - "git-delta"
       - "libevent-devel"  # for tmux
       - "ncurses-devel"   # for tmux
-      - "xclip"            # to copy into clipboard from neovim
+      - "xclip"           # to copy into clipboard from neovim
+      - "shellcheck"      # for bash scripting
     state: present
   tags:
     - install
