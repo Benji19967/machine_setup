@@ -42,6 +42,7 @@
     # For network discovery
     - nmap
     - nushell
+    - elixir
 
 
 - name: Install apps with homebrew (cask)
