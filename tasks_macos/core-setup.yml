@@ -43,6 +43,8 @@
     - nmap
     - nushell
     - elixir
+    # DB migrations
+    - dbmate 
 
 
 - name: Install apps with homebrew (cask)
